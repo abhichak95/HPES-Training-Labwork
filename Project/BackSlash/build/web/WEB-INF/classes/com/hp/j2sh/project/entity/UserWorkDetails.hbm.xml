@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 Jul, 2015 11:33:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hp.j2sh.project.entity.UserWorkDetails" table="user_work_details" catalog="backslash">
+        <id name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="organization" type="string">
+            <column name="organization" length="100" />
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="50" />
+        </property>
+        <property name="workSince" type="java.lang.Integer">
+            <column name="work_since" />
+        </property>
+        <one-to-one name="allUsers" class="com.hp.j2sh.project.entity.AllUsers" cascade="all"></one-to-one>
+    </class>
+</hibernate-mapping>

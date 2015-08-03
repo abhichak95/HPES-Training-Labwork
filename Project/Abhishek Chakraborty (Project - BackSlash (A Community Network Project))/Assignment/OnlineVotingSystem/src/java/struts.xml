@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action class="com.hp.j2sh.action.Authenticate" name="Login" method="check">
+            <result name="success">infoPage.jsp</result>
+            <result name="input">loginPage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        <action name="GetVote">
+            <result>GetVote</result>
+        </action>
+        <action name="RegisterVoter">
+            <result>RegisterVoter</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/backslash?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">password</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <mapping resource="com/hp/j2sh/project/entity/UserOtherDetails.hbm.xml"/>
+    <mapping resource="com/hp/j2sh/project/entity/UserEducationalDetails.hbm.xml"/>
+    <mapping resource="com/hp/j2sh/project/entity/AllCommunities.hbm.xml"/>
+    <mapping resource="com/hp/j2sh/project/entity/AllUsers.hbm.xml"/>
+    <mapping resource="com/hp/j2sh/project/entity/UserWorkDetails.hbm.xml"/>
+    <mapping resource="com/hp/j2sh/project/entity/UserPersonalDetails.hbm.xml"/>
+    <mapping resource="com/hp/j2sh/project/entity/CommunityUsers.hbm.xml"/>
+    <mapping resource="com/hp/j2sh/project/other/Post.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

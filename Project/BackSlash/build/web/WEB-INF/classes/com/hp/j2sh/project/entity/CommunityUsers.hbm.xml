@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 Jul, 2015 11:33:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hp.j2sh.project.entity.CommunityUsers" table="community_users" catalog="backslash">
+        <id name="count" type="java.lang.Integer">
+            <column name="count" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="communityId" type="int">
+            <column name="community_id" not-null="true" />
+        </property>
+        <property name="userId" type="int">
+            <column name="user_id" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

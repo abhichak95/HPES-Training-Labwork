@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 Jul, 2015 11:33:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hp.j2sh.project.entity.UserOtherDetails" table="user_other_details" catalog="backslash">
+        <id name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="hometown" type="string">
+            <column name="hometown" length="30" />
+        </property>
+        <property name="houseNo" type="string">
+            <column name="house_no" length="30" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="30" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="30" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="30" />
+        </property>
+        <one-to-one name="allUsers" class="com.hp.j2sh.project.entity.AllUsers" cascade="all"></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+  <!DOCTYPE validators PUBLIC 
+  		"-//Apache Struts//XWork Validator 1.0.2//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+    <field name="userid">
+        <field-validator type="int">
+            <message>Please Enter your UserId</message>
+        </field-validator>
+    </field>
+    <field name="username">
+        <field-validator type="requiredstring">
+            <message>Please Enter your Name</message>
+        </field-validator>
+    </field>
+    <field name="email">
+        <field-validator type="requiredstring">
+            <message>Please Enter your required Email</message>
+        </field-validator>
+    </field>
+    
+     <field name="username">
+        <field-validator type="stringlength">
+            <param name="minLength">6</param>
+            <param name="maxLength">10</param>
+            <message>Name must be between 6 to 10 character</message>
+        </field-validator>
+    </field>
+    
+    <field name="email">
+        <field-validator type="email">
+            <message>Please Enter your valid Email</message>
+        </field-validator>
+    </field>
+    <field name="password">
+        <field-validator type="requiredstring">
+            <message>Please Enter your Password</message>
+        </field-validator>
+    </field>
+    
+</validators>

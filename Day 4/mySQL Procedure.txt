@@ -1,0 +1,27 @@
+mysql> delimiter //
+mysql> CREATE PROCEDURE getUser (IN EID INT(4), OUT EUSER VARCHAR(25))
+    -> BEGIN
+    ->  SELECT username INTO EUSER
+    ->  FROM sh
+    ->  WHERE id=EID;
+    -> END //
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delimiter ;
+
+
+
+/***************************************************************/
+
+
+
+
+mysql> CREATE FUNCTION getU (EID INT(4)) RETURNS VARCHAR(25)
+    -> BEGIN
+    ->  DECLARE NF VARCHAR(25);
+    ->  SELECT username INTO NF FROM user WHERE ID = EID;
+    ->  RETURN NF;
+    -> END//
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delimiter ;

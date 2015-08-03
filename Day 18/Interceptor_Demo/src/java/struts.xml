@@ -1,0 +1,31 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <!--
+        <global-results>
+            <result name="nullPointer">/nullPointer.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.NullPointerException" result="nullPointer"></exception-mapping>
+        </global-exception-mappings>
+        -->
+        <interceptors>
+            <interceptor name="my1" class="com.hp.stp.j2sh.interceptor.MyInterceptor1"></interceptor>
+            <interceptor name="my2" class="com.hp.stp.j2sh.interceptor.MyInterceptor2"></interceptor>
+        </interceptors>
+        <action name="Login" class="com.hp.stp.j2sh.LoginActionSupport" method="login">
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="timer"></interceptor-ref>
+            <interceptor-ref name="my1"></interceptor-ref>
+            <interceptor-ref name="my2"></interceptor-ref>
+            <result name="admin">/admin.jsp</result>
+            <result name="user">/user.jsp</result>
+            <result name="error">/error.jsp</result>
+            <result name="notFound">/notFound.jsp</result>
+        </action>
+    </package>
+</struts>

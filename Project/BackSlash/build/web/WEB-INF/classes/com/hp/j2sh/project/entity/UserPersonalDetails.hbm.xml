@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 Jul, 2015 11:33:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hp.j2sh.project.entity.UserPersonalDetails" table="user_personal_details" catalog="backslash">
+        <id name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="firstName" type="string">
+            <column name="first_name" length="50" not-null="true" />
+        </property>
+        <property name="middleName" type="string">
+            <column name="middle_name" length="50" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="50" />
+        </property>
+        <property name="emailPrimary" type="string">
+            <column name="email_primary" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="emailSecondary" type="string">
+            <column name="email_secondary" length="50" />
+        </property>
+        <property name="contactPrimary" type="long">
+            <column name="contact_primary" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="contactSecondary" type="java.lang.Long">
+            <column name="contact_secondary" precision="10" scale="0" />
+        </property>
+        <property name="dob" type="date">
+            <column name="dob" length="10" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="2" />
+        </property>
+        <one-to-one name="allUsers" class="com.hp.j2sh.project.entity.AllUsers" cascade="all"></one-to-one>
+    </class>
+</hibernate-mapping>

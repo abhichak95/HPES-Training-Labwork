@@ -1,0 +1,62 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        
+        <global-results>
+            <result name="errorAny">errorPage.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="errorAny"></exception-mapping>
+        </global-exception-mappings>
+        
+        <action name="Login" class="com.hp.j2sh.project.action.AuthenticateLogin">
+            <result name="success">userHomePage.jsp</result>
+            <result name="input">loginRetryPage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        
+        <action name="Register" class="com.hp.j2sh.project.action.RegisterUser">
+            <result name="success">userHomePage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        
+        <action name="CreateCommunity" class="com.hp.j2sh.project.action.RegisterCommunity">
+            <result name="success">userHomePage.jsp</result>
+            <result name="input">createCommunityPage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        
+        <action name="Join" class="com.hp.j2sh.project.action.JoinCommunity">
+            <result name="success">userHomePage.jsp</result>
+            <result name="input">userHomePage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        
+        <action name="Enter" class="com.hp.j2sh.project.action.EnterCommunity">
+            <result>communityPage.jsp</result>
+        </action>
+        
+        <action name="Logout" class="com.hp.j2sh.project.action.LogOut">
+            <result>loginHomePage.jsp</result>
+        </action>
+        
+        <action name="Profile" class="com.hp.j2sh.project.action.ProfileData">
+            <result name="success">userProfilePage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        
+        <action name="SubmitPost" class="com.hp.j2sh.project.action.CreatePost">
+            <result name="success">communityPage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        
+        <action name="GoToHome">
+            <result>userHomePage.jsp</result>
+        </action>
+        
+    </package>
+</struts>

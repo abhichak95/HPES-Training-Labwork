@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 Jul, 2015 11:33:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hp.j2sh.project.entity.AllCommunities" table="all_communities" catalog="backslash">
+        <id name="communityId" type="java.lang.Integer">
+            <column name="community_id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="communityName" type="string">
+            <column name="community_name" length="30" not-null="true" unique="true" />
+        </property>
+        <many-to-one name="allUsers" class="com.hp.j2sh.project.entity.AllUsers" lazy="false" fetch="select">
+            <column name="admin_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
